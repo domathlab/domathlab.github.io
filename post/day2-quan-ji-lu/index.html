@@ -1,0 +1,323 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Day2全记录 | Domath Lab</title>
+
+<link rel="shortcut icon" href="https://domathlab.github.io/favicon.ico?v=1767775113964">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://domathlab.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Domath Lab
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1767775113964" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Day2全记录
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-04-12 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>姚高华:<br>
+#DoMath社群学习# 20200712 ⽇拱⼀卒学数学——数学趣题<br>
+你能用手指数出多大的数？<br>
+小猫: 指的是按规则，连续数数能数到几吗？@姚高华<br>
+洪🌻 容: 1023？<br>
+洪🌻 容: 二进制<br>
+希瑞: 可以一直数下去啊[偷笑]<br>
+小猫: 应该是用手指来表达数吧<br>
+姚高华: 对，是能表达的最大数是多少<br>
+echo จุ๊คิดถึง: 10，10进制？[偷笑]<br>
+小猫: 被@兰思成妈妈 启发，用三进制来表达，数到29524。三进制，每个手指的三种状态，如手心朝上时，手指握拳状，微伸状，全部张开状。<br>
+希瑞: 还是可以一直数下去啊<br>
+希瑞: 比如以握拳表示0，张开表示1，用二进制可以一直数下去吧。<br>
+洪🌻 容: 三进制就不能数出二来了<br>
+小猫: 可以呀，比如我从大拇指开始变化，大拇指舒展开来时，就是2<br>
+肖毛: @兰思成妈妈 怎么不能呢？<br>
+小猫: 我就是在0和1状态下，增加手指 微弯 这个状态，变成可以用3个状态<br>
+肖毛: 一个一个数的，只是逢三进位<br>
+洪🌻 容: 可以用很多个状态吗？<br>
+洪🌻 容: 那不就可以一直数了吗？<br>
+洪🌻 容: 弯10度表示一，弯20度表示二……<br>
+小猫: 每个状态对应一个数，如果一直数，需要将手指变化出无穷个状态，如果可以做到，愿闻其详<br>
+小猫: @兰小成妈妈 是个思路，但是度数太接近的话很难区分出来<br>
+洪🌻 容: 但是只是表示数，又不需要别人知道<br>
+洪🌻 容: 所以我觉得一根手指应该只能有，两种状态吧！<br>
+姚高华: 今天感觉可以提前下课，嗯<br>
+小猫: 就算别人不知道，我们的十根手指需要知道哈[調皮]<br>
+希瑞: 一根手指可以有很多状态，比如说指向12点/6点/3点/9点<br>
+希瑞: 方向<br>
+小猫: 还要考虑十个手指在一起的协调性<br>
+姚高华: 还是要搞清楚，不然自己都忘了数到了多少<br>
+小猫: 我本来想六种状态，手心朝上手背朝上，但发现同一只手的五根手指不可能一只手背朝上，其他几个手心朝上去弄状态，只好放弃。<br>
+小猫: 咦，好像可以，29524+29524<br>
+小猫: 数完之后，再换朝向，朝向不算在同一个变化状态里<br>
+姚高华: 可以画个草图<br>
+洪🌻 容: 如果一根手指有两种状态的话，应该是1023吧？<br>
+如果可以有三种状态的话，是88572吧？<br>
+洪🌻 容: 三种状态的话，可以用三进制<br>
+小猫: 三进制我算错了哈，满格状态是2222222222，我算成1111111111了@兰小成妈妈 谢谢提醒<br>
+洪🌻 容: 两种状态的话，可以是第一根手指一，第二根手指二，第三根手指四，第四根手指八一，直到第十根手指到512<br>
+洪🌻 容: 这样算下来，最大就是1023<br>
+洪🌻 容: 三种状态的话，就是第一根手指是一第二根手指是三第三根手指是九第四根手指27一直到第十根手指<br>
+洪🌻 容: 算出来最大，是88572<br>
+小猫: 嗯，实际操作中，还可以加上朝向，刚才@希瑞 提醒的，只是朝向不能同时和手指状态一起变化，因为整只手朝向会是一个方向，但是可以当成集装箱 一样，每次数完1023（比如两种状态下），换手掌的朝向，这样加上手掌心辨识度高的四种朝向，上下左右，可以在原来的数字上再乘以4<br>
+希瑞: 那4进制5进制……<br>
+希瑞: 我觉得问题还要再理清一下<br>
+小猫: @希瑞 我的理解是数完一轮后，一起换朝向，所以是总数再乘以4，如果你可以直接让每个手指同时 变化时，每个手指能呈现出4种 、5种状态，也可以的 。<br>
+希瑞: @兰小成妈妈 @小猫 我还想请教一下，按照这个思路三进制怎么得出的88572，为什么不是59048。<br>
+小猫: @兰小成妈妈 在手指状态上给我们奠定了思路 的方向[玫瑰]<br>
+小猫: 2222222222（三进制 ）=59048（十进制），这个你说的 没错@希瑞<br>
+希瑞: @姚高华 题目要求的说的是用自己的10个手指头，靠弯指头数数，可以数出来的最大数吗？<br>
+姚高华: 可以弯，但是指令得明确<br>
+姚高华: 状态得清晰可辨<br>
+姚高华: 就是你的手<br>
+希瑞: @姚高华 主要想搞清楚，是可以“表达”出来的最大数，还是可以“连续表达”出来的最大数。<br>
+姚高华: 如果能表达出的最大数是1023，那么1～1023之间的数都应该可以表达出来<br>
+姚高华: 是问这个么<br>
+希瑞: @姚高华 问这个是因为，可以约定10个手指分别表示0-9。<br>
+希瑞: 但它就无法表达99<br>
+希瑞: 可以表示的最大数是9876543210<br>
+姚高华: 0～9？<br>
+小猫: 希瑞是直接给10个手指头赋值<br>
+姚高华: 可以展示一下，9876543210，和1234567890，两种数字，手指如何不，可以画图哈<br>
+小猫: 比如左大拇指=9，左食指=8.......右小指头=0<br>
+小猫: 不过所有的重复的数字组合都不能表达<br>
+希瑞: @小猫 是的，我是这个意思。<br>
+小猫: 因为每个数字只有1个机会，没办法构成连续性<br>
+小猫: 不只99不能表达，11，121这种都不能表达<br>
+唐家利: 我有一个想法<br>
+唐家利: 可能可以解决这种问题<br>
+小猫: @希瑞 还有数字的顺序的表达<br>
+小猫: 都是挑战<br>
+唐家利:</p>
+<p>唐家利: 电风扇上<br>
+姚高华: 感觉要有惊喜<br>
+希瑞: @小猫 我想到了。需要表达99可以弯两次同一手指啊。[掩面]<br>
+希瑞: 又趋向无穷了<br>
+小猫: 动作两次和状态不是同一个概念啊<br>
+希瑞: @小猫 是的。跟那个二进制的无穷是一样的。回到了题意理解的范畴。<br>
+小猫: @希瑞 努力在把阈值往无穷大靠近[強]<br>
+希瑞: @唐家利 愿闻其祥[調皮]<br>
+唐家利:<br>
+1=1<br>
+2=2<br>
+3=1+2<br>
+4=4<br>
+5=1+4<br>
+6=4+2<br>
+7=4+2+1<br>
+8=8<br>
+9=8+1<br>
+10=8+2<br>
+11=8+2+1<br>
+12=8+4<br>
+13=8+4+1<br>
+14=8+4+2<br>
+15=8+4+1<br>
+唐家利: 这样可以节约很多中间的数字<br>
+姚高华: 清晰<br>
+唐家利: 本以为可以表达的数字没多少<br>
+唐家利: 但是后面数字越大表达的数字越多<br>
+唐家利: 现在是15个可以表达的<br>
+小猫: 这个不是和二进制类似吗<br>
+小猫: 进制其实就是加起来的数<br>
+小猫: 二进制中7=1+2+4<br>
+唐家利: 再加一个数字“16”可以表达的数就可以增加到31个<br>
+唐家利: @小猫 没看懂啊<br>
+唐家利: 二进制中好像7是111<br>
+小猫: 是 ，111每一个位分别等于10进制的4，2，1<br>
+小猫: 数是“位”的级别和每个“位”上的状态 构成 的。<br>
+唐家利: 也就是说在二进制中个位代表1，十位代表2，百位代表4，千位就是8<br>
+小猫: 我们有10个手指头，可以有10个“位”<br>
+小猫: 然后每个“位”上的一只手指头我们能做出2个状态 或者3个状态<br>
+小猫: 十进制 ，是一个 位上有10个数字，也可以说是10种状态<br>
+小猫: 电脑里二进制，因为亮和灭是两种状态<br>
+小猫: @唐家利 嗯，是的 ，所以我 说你刚才那个思路和二进制思路 差不多<br>
+小猫: 本来我看到你 电风扇，在想手指的角度问题，加上角度维度能不能再做出一些变化，不过我手拙 ，暂时弄不出来😃</p>
+<p>唐家利: 这样可以表达的数更多了<br>
+唐家利: 手指其实可以做的角度很多<br>
+唐家利: 不过不清晰<br>
+唐家利: 最多貌似只有三个清晰的角度<br>
+姚高华: 可以再观察一下自己的手，有没有可以用的符号[得意]<br>
+小猫: 嗯，可辨识和每个手指能做出统一的状态来指称一个数字符号很重要。<br>
+唐家利: 三个指关节？<br>
+小猫: 手指上有横纹<br>
+唐家利: 大拇指可以做出来三个清晰的角度，但是最后一个角度如果其他手指握紧就不协调了<br>
+小猫: 减1<br>
+洪🌻 容: n种状态就是n的10次方减1<br>
+洪🌻 容: 😊<br>
+洪🌻 容: 3种是我算错了<br>
+洪🌻 容: 我的手指好像可以做四种状态<br>
+唐家利: 可不可以把手指向后弯曲作为一种方法<br>
+唐家利: 向后弯曲一种，直立一种，向前弯曲20度左右一种，向前弯曲65度左右一种，向前弯曲90度（完全弯曲）一种<br>
+唐家利: 本来还有很多种，但其他要不就是不清晰，要不就是不协调<br>
+小猫: 那么能否做到中指向手心完全弯曲的时候 ，其他几个全部向后弯曲？[吼嘿]<br>
+小猫: 中指简直是计数状态的最大阻力[掩面]<br>
+唐家利: 对哦<br>
+唐家利: 还有无名指和小指<br>
+唐家利: 无名指向前全部弯曲小指头无法向后弯曲，小指但凡向前弯曲无名指就无法向后，小指向前全部弯曲无名指只能向前弯曲20度左右<br>
+小猫: 二进制的两个状态 是最容易实现的<br>
+洪🌻 容: 打直，全部向前弯45度，第二指关节弯90度（大拇指是第一个），蜷曲，紧贴手心<br>
+洪🌻 容: 这样有4种<br>
+洪🌻 容: 最大是1048575<br>
+唐家利: 怎么算的[掩面]<br>
+小猫: 我的手 ，我最后倾向于@兰小成妈妈 一开始提的二进制[奸笑]因为我发现我的小拇指微微弯曲时，我的无名指都没办法伸直 [調皮]我的手指能完美做到的就是弯曲贴着手心和不完全弯曲两个状态<br>
+唐家利: 第一个我的食指还是可以立直的<br>
+洪🌻 容: 其实三种状态是比较简单的<br>
+洪🌻 容: 最大59048<br>
+fennie: 4的10次方<br>
+fennie: 一个手指4变化<br>
+fennie: 10个手指=4*4......*4种变化<br>
+姚高华: 哪四种变化？摆哈看看😄<br>
+fennie: 每个手指三个关节，从全弯到全不弯<br>
+姚高华: 我发现我做不到，只弯一个关节，尤其最上面的关节<br>
+姚高华: 有条件的可以拍个小视频讲解一下<br>
+姚高华: do math<br>
+fennie: 半弯也算<br>
+姚高华: @希瑞 居然可以把手收回去[強][強][強]<br>
+姚高华: 植物里其实也有进位制<br>
+姚高华:</p>
+<p>姚高华: 不同的植物采取不同的进制方法<br>
+echo จุ๊คิดถึง: 姚老师一说就会想哦，真是哈，要我把看到的跟数学联系起来还是有点抽象，数学思维是不是得从小培养啊<br>
+姚高华:</p>
+<p>姚高华: 这种铁树，会不会每一支上的单叶数量都是一样的？<br>
+姚高华: @echo จุ๊คิดถึง 多大都可以<br>
+希瑞: @姚高华 哇⊙∀⊙！大自然最神奇。<br>
+sunshineདྲི་མེད་མཚོ།: 姚老师，这种铁树应该每一支上的单叶是一样的<br>
+echo จุ๊คิดถึง: 什么时候我去数一数<br>
+姚高华: 要的<br>
+姚高华: 记得告知结果[抱拳]<br>
+姚高华: 植物不知道“位值”这个概念[呲牙]<br>
+姚高华: 如果植物也知道“位值”，植物世界就要大变样了<br>
+姚高华: 今天录了点视频解释两个问题，大家等一等<br>
+姚高华:</p>
+<p>姚高华:</p>
+<p>姚高华:</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">看见数学｜爱上数学</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://domathlab.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

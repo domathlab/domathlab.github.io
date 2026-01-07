@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://domathlab.github.io</id>
+    <title>Domath Lab</title>
+    <updated>2026-01-07T08:38:39.705Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://domathlab.github.io"/>
+    <link rel="self" href="https://domathlab.github.io/atom.xml"/>
+    <subtitle>看见数学｜爱上数学</subtitle>
+    <logo>https://domathlab.github.io/images/avatar.png</logo>
+    <icon>https://domathlab.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, Domath Lab</rights>
+    <entry>
+        <title type="html"><![CDATA[从数学创造希望，2026成都超椭圆数学节早鸟票发售！]]></title>
+        <id>https://domathlab.github.io/post/QMysq0alUl/</id>
+        <link href="https://domathlab.github.io/post/QMysq0alUl/">
+        </link>
+        <updated>2026-01-05T04:12:58.000Z</updated>
+    </entry>
+</feed>
