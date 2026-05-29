@@ -1,0 +1,504 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Domath Lab</title>
+
+<link rel="shortcut icon" href="https://domath.club/favicon.ico?v=1780033595984">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://domath.club/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <style>
+        /* 强制吸顶导航 - 网页工程师直接注入 */
+        .navbar {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+            background: rgba(245, 241, 232, 0.9) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(36, 58, 52, 0.08) !important;
+            padding: 20px clamp(28px, 6vw, 96px) !important;
+            transition: all 0.3s ease !important;
+        }
+        html {
+            scroll-behavior: smooth !important;
+            scroll-padding-top: 100px !important;
+        }
+        /* 修复跳转时背景颜色突兀 */
+        .gt-bg-theme-color-first {
+            background: #f5f1e8 !important;
+        }
+        
+        /* 园区联系卡片样式 - 重新设计 */
+        .domath-campus-section-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(36, 58, 52, 0.1);
+        }
+        
+        /* 统一卡片网格系统 */
+        .domath-camp-records, .domath-record-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .domath-record-card {
+            background: #fff;
+            padding: 24px;
+            border: 1px solid rgba(36, 58, 52, 0.1);
+            transition: all 0.3s ease;
+            display: block;
+            text-decoration: none !important;
+        }
+        .domath-record-card:hover {
+            border-color: #cf422b;
+            box-shadow: 0 10px 30px rgba(207, 66, 43, 0.08);
+            transform: translateY(-2px);
+        }
+        .domath-record-card span {
+            font-size: 12px;
+            color: #cf422b;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .domath-record-card h3 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            color: #243a34;
+        }
+        .domath-record-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* 适配：去掉原有的 domath-two 左右排版约束，改为垂直全宽 */
+        .domath-two {
+            display: block !important;
+        }
+        .domath-two > div:first-child {
+            margin-bottom: 30px;
+        }
+        .domath-program-copy {
+            max-width: 100% !important;
+        }
+        
+        /* 首页 Hero 图片填充样式 */
+        .domath-hero__visual {
+            padding: 0 !important;
+            border: none !important;
+            background: #f5f1e8 !important;
+        }
+        .domath-hero__poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+        .domath-campus-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: rgba(232, 221, 202, 0.2); /* 淡淡的沙色 */
+            padding: 40px;
+            border-radius: 2px;
+            border-left: 4px solid #cf422b; /* 品牌红线条 */
+        }
+        .domath-campus-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            text-align: left;
+        }
+        .domath-campus-info h3 {
+            margin: 0 0 4px 0;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .domath-campus-info p {
+            margin: 0;
+            color: #cf422b;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .domath-campus-card img {
+            width: 110px;
+            height: 110px;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+        @media (max-width: 992px) {
+            .domath-campus-contacts {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main domath-site">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Domath Lab
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ml-auto" style="text-align: center">
+            <div class="nav-item">
+                <a href="/" class="menu gt-a-link">首页</a>
+            </div>
+            <div class="nav-item">
+                <a href="/#core-math-detail" class="menu gt-a-link">核心概念数学课</a>
+            </div>
+            <div class="nav-item">
+                <a href="/#big-vision-detail" class="menu gt-a-link">数学大视野</a>
+            </div>
+            <div class="nav-item">
+                <a href="/#et-camp-detail" class="menu gt-a-link">ET工程营</a>
+            </div>
+            <div class="nav-item">
+                <a href="/#core-concept-camp-detail" class="menu gt-a-link">核心概念数学营</a>
+            </div>
+            <div class="nav-item">
+                <a href="/#contact" class="menu gt-a-link">联系合作</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://en.domath.club" class="menu gt-a-link" style="color: #cf422b !important; font-weight: 800;">EN</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+        <main class="domath-home">
+            <section class="domath-hero">
+                <div class="domath-hero__content">
+                    <p class="domath-kicker">Domath Math & Engineering Lab</p>
+                    <h1>为数学辩白，为工程勤勉。</h1>
+                    <p class="domath-hero__lead">
+                        Domath 数学与工程实验室面向学校、家庭与教育从业者，设计数学课程、主题营会、工程项目与数学文化活动，让孩子在游戏、制作、表达和真实问题中看见数学，也学会把想法勤勉地做出来。
+                    </p>
+                    <div class="domath-hero__actions">
+                        <a class="domath-button domath-button--primary" href="#projects">了解项目</a>
+                        <a class="domath-button" href="/archives">阅读文章</a>
+                        <a class="domath-button" href="#contact">联系合作</a>
+                    </div>
+                </div>
+                <div class="domath-hero__visual" aria-hidden="true">
+                    <img src="/images/hero-poster.jpg" alt="2026 Domath 夏令营" class="domath-hero__poster">
+                </div>
+            </section>
+
+            <section class="domath-statement">
+                <div>
+                    <p class="domath-kicker">Why Domath</p>
+                    <h2>我们希望回答三个问题：数学是什么？为什么要学数学？数学到底在哪里？</h2>
+                </div>
+                <p>
+                    对 Domath 来说，数学不是只为考试服务的工具。数学可以是游戏、艺术、实验、交谈和建造；它既训练逻辑，也打开审美、想象和创造。工程则让孩子在材料、结构、规则和限制中工作，学会验证、迭代与承担真实结果。
+                </p>
+            </section>
+
+            <section class="domath-strip" aria-label="机构方法">
+                <div>
+                    <strong>数学游戏</strong>
+                    <span>用桌游、策略和规则让抽象结构变得可进入。</span>
+                </div>
+                <div>
+                    <strong>动手制作</strong>
+                    <span>从材料开始，经历设计、失败、修正和完成。</span>
+                </div>
+                <div>
+                    <strong>项目探究</strong>
+                    <span>把数学、工程、艺术和空间问题放进真实任务。</span>
+                </div>
+            </section>
+
+            <section class="domath-section" id="projects">
+                <div class="domath-section__head">
+                    <p class="domath-kicker">Explore</p>
+                    <h2>核心业务板块</h2>
+                    <p>从日常深度的核心课程到假期高密度的营期活动，我们通过四个业务维度，让孩子在游戏、制作与探究中看见数学，体会工程的力量。</p>
+                </div>
+                <div class="domath-projects">
+                    <a class="domath-project" id="core-math" href="#core-math-detail">
+                        <span>01</span>
+                        <h3>七大核心概念数学课</h3>
+                        <p>日常课程产品。围绕集合、数感、图形、测量、空间关系、模式、数据分析七个核心概念，帮助孩子建立长期、连续的数学理解。</p>
+                    </a>
+                    <a class="domath-project" id="big-vision" href="#big-vision-detail">
+                        <span>02</span>
+                        <h3>数学大视野</h3>
+                        <p>营期活动品牌。进入考试之外的数学小分支、数学史、数学文化、游戏与制作，让孩子看见更广阔、更有趣、更美的数学。</p>
+                    </a>
+                    <a class="domath-project" id="et-camp" href="#et-camp-detail">
+                        <span>03</span>
+                        <h3>ET 工程营</h3>
+                        <p>营期活动品牌。以工程任务和动手建造为载体，让孩子在真实材料、真实限制和真实作品中学习结构、协作与创造。</p>
+                    </a>
+                    <a class="domath-project" id="core-concept-camp" href="#core-concept-camp-detail">
+                        <span>04</span>
+                        <h3>核心概念数学营</h3>
+                        <p>营期活动品牌。把核心概念放进寒暑假和节假日的集中体验中，按年级分层，用游戏、问题和制作完成高密度学习。</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="domath-section domath-program-detail" id="core-math-detail">
+                <div class="domath-section__head">
+                    <p class="domath-kicker">Core Concepts</p>
+                    <h2>七大核心概念数学课</h2>
+                    <p>这是 Domath 完全课外的数学核心概念体系。它基于知识脉络，但不拘泥于教材；它重视数学能力，也重视孩子是否能真正感受到数学问题背后的内涵。</p>
+                </div>
+                <div class="domath-concepts">
+                    <span>集合</span>
+                    <span>数感</span>
+                    <span>图形</span>
+                    <span>测量</span>
+                    <span>空间关系</span>
+                    <span>模式</span>
+                    <span>数据分析</span>
+                </div>
+                
+                <div class="domath-campus-section-footer">
+                    <div class="domath-campus-contacts">
+                        <div class="domath-campus-card">
+                            <img src="/images/contact/kuanzhai-qr.png" alt="南门校区二维码">
+                            <div class="domath-campus-info">
+                                <h3>南门校区</h3>
+                                <p>微信咨询：Domath 李老师</p>
+                            </div>
+                        </div>
+                        <div class="domath-campus-card">
+                            <img src="/images/contact/nanmen-qr.jpg" alt="宽窄校区二维码">
+                            <div class="domath-campus-info">
+                                <h3>宽窄校区</h3>
+                                <p>微信咨询：Domath 梁老师</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="domath-section domath-program-detail domath-camp-section" id="core-concept-camp-detail">
+                <div class="domath-section__head">
+                    <p class="domath-kicker">Core Concept Camp</p>
+                    <h2>核心概念数学营</h2>
+                    <p>核心概念数学营不是日常课的简单压缩，而是在营期里围绕同一组核心数学概念进行集中体验、分层挑战和作品化表达。</p>
+                </div>
+                <div class="domath-camp-records">
+                    <a class="domath-record-card" href="https://mp.weixin.qq.com/s/ZL0DoM4j5lH73v6Ls5iaWQ" target="_blank" rel="noopener">
+                        <span>2026 夏令营</span>
+                        <h3>核心概念数学营</h3>
+                        <p>宽窄巷子与南门双校区；覆盖一至八年级；通过桌游与动手制作深度理解七大数学核心概念。</p>
+                    </a>
+                    <a class="domath-record-card" href="https://mp.weixin.qq.com/s/NOt6Q_B6GXA8As8Shjpggw" target="_blank" rel="noopener">
+                        <span>2026 冬令营</span>
+                        <h3>核心概念数学营</h3>
+                        <p>宽窄巷子与南门双校区；覆盖一至五年级；按年级分期走读。</p>
+                    </a>
+                    <a class="domath-record-card" href="https://mp.weixin.qq.com/s/LB4B5-RbYfWanNc6e34rDQ" target="_blank" rel="noopener">
+                        <span>2025 夏令营</span>
+                        <h3>核心概念数学营</h3>
+                        <p>一二年级、三四年级、五六年级分层；围绕核心概念开展暑期集中学习。</p>
+                    </a>
+                    <a class="domath-record-card" href="https://mp.weixin.qq.com/s/DhyKTdPPg-1eZqXKvlxS3w" target="_blank" rel="noopener">
+                        <span>2025 冬令营</span>
+                        <h3>核心概念数学营</h3>
+                        <p>一二、三四、五六年级分期；强调请勿跳级，保持概念学习的年级连续性。</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="domath-section domath-method">
+                <div class="domath-section__head">
+                    <p class="domath-kicker">How We Teach</p>
+                    <h2>营会和课程怎么发生</h2>
+                </div>
+                <div class="domath-method__grid">
+                    <div>
+                        <h3>从游戏进入</h3>
+                        <p>围绕同一数学主题集中体验多款游戏，在比较、分析和复盘中理解规则背后的数学结构。</p>
+                    </div>
+                    <div>
+                        <h3>从制作深入</h3>
+                        <p>通过游戏制作、数学艺术和空间制作，把抽象概念变成可见、可触摸、可讨论的作品。</p>
+                    </div>
+                    <div>
+                        <h3>从真实问题延展</h3>
+                        <p>让学生经历创造的艰难和完成的喜悦，在限制中调整方案，在作品中验证理解。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="domath-section domath-two" id="big-vision-detail">
+                <div>
+                    <p class="domath-kicker">Big Vision</p>
+                    <h2>数学大视野</h2>
+                </div>
+                <div class="domath-program-copy">
+                    <p>
+                        数学大视野面向那些不一定出现在学校考试中、却能拓宽数学边界的主题。它帮助孩子理解数学与历史、艺术、自然、建筑、游戏和社会生活之间的关系，让“数学到底在哪里”变成可以被看见的经验。
+                    </p>
+                    <div class="domath-record-list-grid" aria-label="数学大视野内容记录">
+                        <a class="domath-record-card" href="/post/why-everyone-should-learn-math/">
+                            <span>推荐文章</span>
+                            <h3>为什么每个人都要学数学？</h3>
+                            <p>姚工推荐书单：数学的力量、怎样解题、数学简史、塑造数学脑。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/VsVC5TK5kUzrQyRz4fYHRQ" target="_blank" rel="noopener">
+                            <span>2026 冬令营</span>
+                            <h3>数学大视野营</h3>
+                            <p>探索数学与艺术、自然的跨学科连接。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/fEEmsf5kY3VmOTIgj2o0Wg" target="_blank" rel="noopener">
+                            <span>2025 营期</span>
+                            <h3>数学运动会设计营</h3>
+                            <p>将数学逻辑融入运动竞技设计。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/RDP_CStHNJg9XW2XOK0pHg" target="_blank" rel="noopener">
+                            <span>2025 十一营</span>
+                            <h3>从数学阅读开始</h3>
+                            <p>通过阅读推开数学的大门。</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="domath-section domath-two domath-two--dark" id="et-camp-detail">
+                <div>
+                    <p class="domath-kicker">Engineering</p>
+                    <h2>ET 工程营</h2>
+                </div>
+                <div class="domath-program-copy">
+                    <p>
+                        ET 工程营延续 Domath 对“做”的重视。孩子不只听一个知识点，而是面对一个要被完成的工程任务：设计、搭建、测试、失败、修正、合作，最终让一个真实作品站起来、运转起来、被使用起来。
+                    </p>
+                    <div class="domath-record-list-grid" aria-label="ET工程营营期记录">
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/nooati6ijMZa6PV7opomqg" target="_blank" rel="noopener">
+                            <span>2026 冬令营</span>
+                            <h3>鲁布戈德堡机械工程营</h3>
+                            <p>设计并搭建复杂的连锁反应机械装置。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/dq5CsbVXId-YwMNf0DksdQ" target="_blank" rel="noopener">
+                            <span>2025 夏令营</span>
+                            <h3>多面体树屋建造</h3>
+                            <p>在自然中学习结构力学与空间建造。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/4MJgFVPmztOMhryzJJNImw" target="_blank" rel="noopener">
+                            <span>2025 冬令营</span>
+                            <h3>东敲西打工程营</h3>
+                            <p>真实材料的拆解与重构，培养工程思维。</p>
+                        </a>
+                        <a class="domath-record-card" href="https://mp.weixin.qq.com/s/yYeTbvMlb2KIxFXtMTWe1Q" target="_blank" rel="noopener">
+                            <span>工程项目</span>
+                            <h3>迷你四驱车与赛道设计</h3>
+                            <p>速度、动力与空气动力学的实战验证。</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="domath-section domath-audience">
+                <div class="domath-section__head">
+                    <p class="domath-kicker">For Whom</p>
+                    <h2>我们面向谁</h2>
+                </div>
+                <div class="domath-audience__grid">
+                    <div>
+                        <h3>学校</h3>
+                        <p>共建数学节、数学活动日、项目式学习课程、校本课程与教师培训。</p>
+                    </div>
+                    <div>
+                        <h3>家长</h3>
+                        <p>为孩子提供不同于刷题的数学学习经历，让他们获得兴趣、理解力和创造信心。</p>
+                    </div>
+                    <div>
+                        <h3>教育从业者</h3>
+                        <p>共同研发课程、营会、数学制作、跨学科项目和公共教育活动。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="domath-contact" id="contact">
+                <div>
+                    <p class="domath-kicker">Collaboration</p>
+                    <h2>让数学被看见，让工程被认真完成。</h2>
+                    <p>如果你正在为学校、家庭、营会、公共文化空间或教育项目寻找数学与工程教育方案，可以与 Domath 进一步沟通。</p>
+                </div>
+                <a class="domath-button domath-button--primary" href="mailto:hi.junjie@outlook.com">联系合作</a>
+            </section>
+        </main>
+
+        <div class="site-footer">
+    <div class="slogan">看见数学｜爱上数学</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div class="footer-links">
+        <a href="/archives">全部文章</a>
+    </div>
+    <div>
+        Theme by 菠萝, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://domath.club/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
