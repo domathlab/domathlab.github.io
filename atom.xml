@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://domath.club</id>
+    <title>Domath Lab</title>
+    <updated>2026-06-15T07:53:15.121Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://domath.club"/>
+    <link rel="self" href="https://domath.club/atom.xml"/>
+    <subtitle>看见数学｜爱上数学</subtitle>
+    <logo>https://domath.club/images/avatar.png</logo>
+    <icon>https://domath.club/favicon.ico</icon>
+    <rights>All rights reserved 2026, Domath Lab</rights>
+    <entry>
+        <title type="html"><![CDATA[太喜欢了！数学]]></title>
+        <id>https://domath.club/post/too-like-math/</id>
+        <link href="https://domath.club/post/too-like-math/">
+        </link>
+        <updated>2026-05-21T10:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么每个人都要学数学？]]></title>
+        <id>https://domath.club/post/why-everyone-should-learn-math/</id>
+        <link href="https://domath.club/post/why-everyone-should-learn-math/">
+        </link>
+        <updated>2026-05-19T14:15:25.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[从数学创造希望，2026成都超椭圆数学节早鸟票发售！]]></title>
+        <id>https://domath.club/post/QMysq0alUl/</id>
+        <link href="https://domath.club/post/QMysq0alUl/">
+        </link>
+        <updated>2026-01-05T04:12:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Day3梳理版＋20200713 ⽇拱⼀卒学数学——数论之美]]></title>
+        <id>https://domath.club/post/day3-shu-li-ban-20200713-gong-zu-xue-shu-xue-shu-lun-zhi-mei/</id>
+        <link href="https://domath.club/post/day3-shu-li-ban-20200713-gong-zu-xue-shu-xue-shu-lun-zhi-mei/">
+        </link>
+        <updated>2024-04-12T06:29:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Day2全记录]]></title>
+        <id>https://domath.club/post/day2-quan-ji-lu/</id>
+        <link href="https://domath.club/post/day2-quan-ji-lu/">
+        </link>
+        <updated>2024-04-12T06:28:25.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Day1全记录]]></title>
+        <id>https://domath.club/post/day1-quan-ji-lu/</id>
+        <link href="https://domath.club/post/day1-quan-ji-lu/">
+        </link>
+        <updated>2024-04-12T06:27:12.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[20200706 mountain numbers 高山数]]></title>
+        <id>https://domath.club/post/20200706-mountain-numbers-gao-shan-shu/</id>
+        <link href="https://domath.club/post/20200706-mountain-numbers-gao-shan-shu/">
+        </link>
+        <updated>2024-04-12T06:22:45.000Z</updated>
+    </entry>
+</feed>

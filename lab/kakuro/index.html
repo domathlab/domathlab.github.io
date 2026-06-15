@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数和谜题 — 关卡生成与下载</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="../" class="btn-back">← 返回实验室</a>
+        <h1 class="logo">🔢 数和谜题 Kakuro</h1>
+      </div>
+      <span class="subtitle">真实题库 — 打印或下载 PDF 随时挑战</span>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- 左侧：控制面板 -->
+    <aside class="sidebar">
+      <div class="control-group">
+        <h3>📚 题库筛选</h3>
+        <div class="form-row">
+          <label>尺寸</label>
+          <select id="filterSize" class="select-input">
+            <option value="all">全部尺寸</option>
+          </select>
+        </div>
+        <div class="form-row" style="margin-top:8px;">
+          <label>难度</label>
+          <select id="filterDifficulty" class="select-input">
+            <option value="all">全部难度</option>
+          </select>
+        </div>
+        <p class="hint-text" id="puzzleCount">加载中...</p>
+      </div>
+
+      <div class="control-group">
+        <h3>⚙️ 选项</h3>
+        <div class="toggle-row">
+          <label class="toggle">
+            <input type="checkbox" id="showAnswer" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span>下载时附带答案页</span>
+        </div>
+        <div class="toggle-row" style="margin-top:8px;">
+          <label class="toggle">
+            <input type="checkbox" id="compactMode">
+            <span class="toggle-slider"></span>
+          </label>
+          <span>紧凑布局（节省纸张）</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h3>📄 关卡列表</h3>
+        <div class="puzzle-list" id="puzzleList">
+          <p class="empty-hint">正在加载题库...</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <button class="btn btn-primary btn-block" id="btnRefresh">🔄 刷新题库</button>
+      </div>
+      <div class="control-group">
+        <p class="hint-text" style="font-size:11px;line-height:1.5;">
+          题库来源：grandgames.net<br>
+          通过 GitHub 开源数据集获取<br>
+          运行 <code>python3 fetch_puzzles.py</code> 更新
+        </p>
+      </div>
+    </aside>
+
+    <!-- 右侧：预览区域 -->
+    <section class="preview-area">
+      <div class="preview-header">
+        <h2>关卡预览</h2>
+        <div class="preview-actions">
+          <select id="puzzleSelect" class="select-input">
+            <option value="">— 加载中 —</option>
+          </select>
+          <button class="btn btn-sm" id="btnDownloadPuzzle">📥 下载 PDF</button>
+          <button class="btn btn-sm" id="btnPrintPuzzle">🖨️ 打印</button>
+        </div>
+      </div>
+
+      <div class="preview-container" id="previewContainer">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">📝</div>
+          <p>正在加载题库...</p>
+          <p class="empty-sub">关卡加载后即可预览、下载 PDF 或打印</p>
+        </div>
+        <div class="preview-content" id="previewContent" style="display:none;">
+          <div class="preview-boards">
+            <div class="board-wrapper">
+              <h3 class="board-label">题目</h3>
+              <canvas id="questionCanvas"></canvas>
+            </div>
+            <div class="board-wrapper" id="answerWrapper">
+              <h3 class="board-label">答案</h3>
+              <canvas id="answerCanvas"></canvas>
+            </div>
+          </div>
+          <div class="preview-info">
+            <span class="info-badge" id="infoSize">—</span>
+            <span class="info-badge" id="infoDifficulty">—</span>
+            <span class="info-badge" id="infoClues">提示数：—</span>
+            <span class="info-badge" id="infoCells">空格：—</span>
+            <span class="info-badge" id="infoSource">来源：—</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" style="display:none;"></div>
+
+  <!-- 隐藏打印容器 -->
+  <div class="print-container" id="printContainer" style="display:none;"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
